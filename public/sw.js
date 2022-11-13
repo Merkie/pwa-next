@@ -1,1 +1,101 @@
-if(!self.define){let e,a={};const i=(i,n)=>(i=new URL(i+".js",n).href,a[i]||new Promise((a=>{if("document"in self){const e=document.createElement("script");e.src=i,e.onload=a,document.head.appendChild(e)}else e=i,importScripts(i),a()})).then((()=>{let e=a[i];if(!e)throw new Error(`Module ${i} didn’t register its module`);return e})));self.define=(n,s)=>{const o=e||("document"in self?document.currentScript.src:"")||location.href;if(a[o])return;let r={};const d=e=>i(e,o),c={module:{uri:o},exports:r,require:d};a[o]=Promise.all(n.map((e=>c[e]||d(e)))).then((e=>(s(...e),r)))}}define(["./workbox-588899ac"],(function(e){"use strict";importScripts(),self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/_next/static/chunks/framework-0f397528c01bc177.js",revision:"0f397528c01bc177"},{url:"/_next/static/chunks/main-661084d059e91107.js",revision:"661084d059e91107"},{url:"/_next/static/chunks/pages/_app-05f53d08443c56f6.js",revision:"05f53d08443c56f6"},{url:"/_next/static/chunks/pages/_error-8e848193de3c139c.js",revision:"8e848193de3c139c"},{url:"/_next/static/chunks/pages/index-fd5f0e2a5166696f.js",revision:"fd5f0e2a5166696f"},{url:"/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",revision:"837c0df77fd5009c9e46d446188ecfd0"},{url:"/_next/static/chunks/webpack-2369ea09e775031e.js",revision:"2369ea09e775031e"},{url:"/_next/static/css/ab44ce7add5c3d11.css",revision:"ab44ce7add5c3d11"},{url:"/_next/static/css/ae0e3e027412e072.css",revision:"ae0e3e027412e072"},{url:"/_next/static/xlBB283oeCBhzb5-7F2HB/_buildManifest.js",revision:"991a31eeb08707c38a061591b0c3ce8c"},{url:"/_next/static/xlBB283oeCBhzb5-7F2HB/_ssgManifest.js",revision:"b6652df95db52feb4daf4eca35380933"},{url:"/android/android-launchericon-144-144.png",revision:"b2d0ad5bf50ceeb5ef18641bee2df1e8"},{url:"/android/android-launchericon-192-192.png",revision:"6225b85c41c9a7bc0fa0276d3f1a6850"},{url:"/android/android-launchericon-48-48.png",revision:"20b02ec536490806d4b3ceb708fa57ce"},{url:"/android/android-launchericon-512-512.png",revision:"f69da5e31766c67d55e22f26fb21377f"},{url:"/android/android-launchericon-72-72.png",revision:"4fdedd874f75b1bf8994e76322265a28"},{url:"/android/android-launchericon-96-96.png",revision:"68dfb3282058138425b0e2b6da36dc11"},{url:"/favicon.ico",revision:"c30c7d42707a47a3f4591831641e50dc"},{url:"/ios/100.png",revision:"9d65ed7fadfbb5398fcdcff3e87aa2a3"},{url:"/ios/1024.png",revision:"fd833cffd3eee66ff85ab8b00822806d"},{url:"/ios/114.png",revision:"1ed0b787a642f893e936095cc918c829"},{url:"/ios/120.png",revision:"24474b53fb86b03a5d7b3a0ad80a002d"},{url:"/ios/128.png",revision:"a067dfb92264905cd74ce85170da31c2"},{url:"/ios/144.png",revision:"b2d0ad5bf50ceeb5ef18641bee2df1e8"},{url:"/ios/152.png",revision:"64109e27cb416cc7937c005cf0ee0ec7"},{url:"/ios/16.png",revision:"425e790992115b20a8b84b0a627120d2"},{url:"/ios/167.png",revision:"2998c3ec69b8828704d805c310bad828"},{url:"/ios/180.png",revision:"43a3bbd6910f9f321eef873819810160"},{url:"/ios/192.png",revision:"6225b85c41c9a7bc0fa0276d3f1a6850"},{url:"/ios/20.png",revision:"d3f5c3c2c6069ff60278ad2871e7329f"},{url:"/ios/256.png",revision:"e00081c16b9cd3df6aacd8e895b13b14"},{url:"/ios/29.png",revision:"7e94646fc7abd4cb70b7a87ac48f7488"},{url:"/ios/32.png",revision:"303bf3bb856f740e29859fa2691e4873"},{url:"/ios/40.png",revision:"2b3ac11e008ab5af8780cfbc3ef25c25"},{url:"/ios/50.png",revision:"77ee88888a4c875a2abb4c50470ea7ad"},{url:"/ios/512.png",revision:"f69da5e31766c67d55e22f26fb21377f"},{url:"/ios/57.png",revision:"9ab4b44f70267fb3bcb8e3392acadde5"},{url:"/ios/58.png",revision:"d3e17184f084f47e79b09ed9a83f9415"},{url:"/ios/60.png",revision:"d8c0f9c69f3d691d10beca045fa853ef"},{url:"/ios/64.png",revision:"5e96340764aca2e4b899cb46b1c5cc8d"},{url:"/ios/72.png",revision:"4fdedd874f75b1bf8994e76322265a28"},{url:"/ios/76.png",revision:"a761fce784ffe51bfbde1fa16b691e51"},{url:"/ios/80.png",revision:"76b322c945a99d235c6223b985d4fc4d"},{url:"/ios/87.png",revision:"9453a2e76ec87219fc1a10d2141f0b9d"},{url:"/manifest.json",revision:"3952be67060323fe714eb6100ff4df31"},{url:"/vercel.svg",revision:"4b4f1876502eb6721764637fe5c41702"},{url:"/windows11/LargeTile.scale-100.png",revision:"17bb3f8fd16378b0055757c4aeff2362"},{url:"/windows11/LargeTile.scale-125.png",revision:"215eef0acf9886c28d0d9e372d4f0fbf"},{url:"/windows11/LargeTile.scale-150.png",revision:"797d8d5d50d8d274917849b1085ac532"},{url:"/windows11/LargeTile.scale-200.png",revision:"d89dd680035c23646513268bd06ac743"},{url:"/windows11/LargeTile.scale-400.png",revision:"e9ed270af99638982e49b9932d14addf"},{url:"/windows11/SmallTile.scale-100.png",revision:"47e5935c7dddbd2e60a6be00271fdca6"},{url:"/windows11/SmallTile.scale-125.png",revision:"cb2056a9c73ac8f4ef8085f21c0a951c"},{url:"/windows11/SmallTile.scale-150.png",revision:"540ef73e2578148dae7e3bf75cb31160"},{url:"/windows11/SmallTile.scale-200.png",revision:"2710dba229507352481fa016dc32b23b"},{url:"/windows11/SmallTile.scale-400.png",revision:"d132121155e95a73aa31b255aa70afb2"},{url:"/windows11/SplashScreen.scale-100.png",revision:"419acfd3e016e998f5ebee576aaa2112"},{url:"/windows11/SplashScreen.scale-125.png",revision:"4edd678240f055b1ec5d002e73fd893c"},{url:"/windows11/SplashScreen.scale-150.png",revision:"882497a54fcb37af4c72a6fa4f9ed29a"},{url:"/windows11/SplashScreen.scale-200.png",revision:"ff11398e4e52f5b6bfb92b1724dc973e"},{url:"/windows11/SplashScreen.scale-400.png",revision:"7a60d7ba06048deb828396321d17f5d8"},{url:"/windows11/Square150x150Logo.scale-100.png",revision:"5dddfd3367df3357c55599f3123d2de7"},{url:"/windows11/Square150x150Logo.scale-125.png",revision:"fcb076afdea5cbfcd969f44b971de792"},{url:"/windows11/Square150x150Logo.scale-150.png",revision:"4f8aa86f951f1253a0eada5f7c1510eb"},{url:"/windows11/Square150x150Logo.scale-200.png",revision:"a9073d41b4b82edd27741f453d168d7b"},{url:"/windows11/Square150x150Logo.scale-400.png",revision:"4ae863ea7cd4c29a8bd8c6c82b42b5e5"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",revision:"6374950e407f73b3441eb7fa8da11903"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",revision:"7112f882770ae18bbf081127d883475d"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",revision:"8bc0d768a169ec66eafca90f317079f7"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",revision:"f600992a5b49d735058ef8fa4be845ea"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",revision:"8775a0d960db372ba19f2ce2ec751407"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",revision:"6d822ff29b5c707825a95826bbb6f819"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",revision:"62250b1e515f02526c28c55974c48d3c"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",revision:"38c7e525d4d34d7fb2e93d79e5ed2688"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",revision:"e626507e560779e7647d8586075688b2"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",revision:"0d81d33f018e217bcc58c8b186ad15bf"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",revision:"07f64e3a0d768b6a139a8aaff551b9b8"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",revision:"b8d23a5717558f9af39b0178cd4bfb7a"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",revision:"2da89364d33e4e655d9dcfd951b471f3"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",revision:"06d68aa87c24e7e07e41f6526407444b"},{url:"/windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",revision:"ab35d2a421415ba1028167b744f34228"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-16.png",revision:"6374950e407f73b3441eb7fa8da11903"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-20.png",revision:"7112f882770ae18bbf081127d883475d"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-24.png",revision:"8bc0d768a169ec66eafca90f317079f7"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-256.png",revision:"f600992a5b49d735058ef8fa4be845ea"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-30.png",revision:"8775a0d960db372ba19f2ce2ec751407"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-32.png",revision:"6d822ff29b5c707825a95826bbb6f819"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-36.png",revision:"62250b1e515f02526c28c55974c48d3c"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-40.png",revision:"38c7e525d4d34d7fb2e93d79e5ed2688"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-44.png",revision:"e626507e560779e7647d8586075688b2"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-48.png",revision:"0d81d33f018e217bcc58c8b186ad15bf"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-60.png",revision:"07f64e3a0d768b6a139a8aaff551b9b8"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-64.png",revision:"b8d23a5717558f9af39b0178cd4bfb7a"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-72.png",revision:"2da89364d33e4e655d9dcfd951b471f3"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-80.png",revision:"06d68aa87c24e7e07e41f6526407444b"},{url:"/windows11/Square44x44Logo.altform-unplated_targetsize-96.png",revision:"ab35d2a421415ba1028167b744f34228"},{url:"/windows11/Square44x44Logo.scale-100.png",revision:"e626507e560779e7647d8586075688b2"},{url:"/windows11/Square44x44Logo.scale-125.png",revision:"569f78f73e479d92fd3c1769fe66ed0a"},{url:"/windows11/Square44x44Logo.scale-150.png",revision:"565103c437d148f5d540ff7950e5ce53"},{url:"/windows11/Square44x44Logo.scale-200.png",revision:"9d92c75358d3d4aa29459e1edcaa306e"},{url:"/windows11/Square44x44Logo.scale-400.png",revision:"4fa20105da5c599fab89a08af751495f"},{url:"/windows11/Square44x44Logo.targetsize-16.png",revision:"6374950e407f73b3441eb7fa8da11903"},{url:"/windows11/Square44x44Logo.targetsize-20.png",revision:"7112f882770ae18bbf081127d883475d"},{url:"/windows11/Square44x44Logo.targetsize-24.png",revision:"8bc0d768a169ec66eafca90f317079f7"},{url:"/windows11/Square44x44Logo.targetsize-256.png",revision:"f600992a5b49d735058ef8fa4be845ea"},{url:"/windows11/Square44x44Logo.targetsize-30.png",revision:"8775a0d960db372ba19f2ce2ec751407"},{url:"/windows11/Square44x44Logo.targetsize-32.png",revision:"6d822ff29b5c707825a95826bbb6f819"},{url:"/windows11/Square44x44Logo.targetsize-36.png",revision:"62250b1e515f02526c28c55974c48d3c"},{url:"/windows11/Square44x44Logo.targetsize-40.png",revision:"38c7e525d4d34d7fb2e93d79e5ed2688"},{url:"/windows11/Square44x44Logo.targetsize-44.png",revision:"e626507e560779e7647d8586075688b2"},{url:"/windows11/Square44x44Logo.targetsize-48.png",revision:"0d81d33f018e217bcc58c8b186ad15bf"},{url:"/windows11/Square44x44Logo.targetsize-60.png",revision:"07f64e3a0d768b6a139a8aaff551b9b8"},{url:"/windows11/Square44x44Logo.targetsize-64.png",revision:"b8d23a5717558f9af39b0178cd4bfb7a"},{url:"/windows11/Square44x44Logo.targetsize-72.png",revision:"2da89364d33e4e655d9dcfd951b471f3"},{url:"/windows11/Square44x44Logo.targetsize-80.png",revision:"06d68aa87c24e7e07e41f6526407444b"},{url:"/windows11/Square44x44Logo.targetsize-96.png",revision:"ab35d2a421415ba1028167b744f34228"},{url:"/windows11/StoreLogo.scale-100.png",revision:"77ee88888a4c875a2abb4c50470ea7ad"},{url:"/windows11/StoreLogo.scale-125.png",revision:"8dbb1ca520d8fbc283d59c9cbf0ac966"},{url:"/windows11/StoreLogo.scale-150.png",revision:"a934e619eef330bb4ea0a7ee9f159fb3"},{url:"/windows11/StoreLogo.scale-200.png",revision:"9d65ed7fadfbb5398fcdcff3e87aa2a3"},{url:"/windows11/StoreLogo.scale-400.png",revision:"55d3818224577fc506a5315779495621"},{url:"/windows11/Wide310x150Logo.scale-100.png",revision:"da98a1dfb5661ed0c8ecc33e18612cd5"},{url:"/windows11/Wide310x150Logo.scale-125.png",revision:"a933a0fa53c7a711d6f9623b034ac91e"},{url:"/windows11/Wide310x150Logo.scale-150.png",revision:"10fbda7c07105c6eef831e1882585e57"},{url:"/windows11/Wide310x150Logo.scale-200.png",revision:"419acfd3e016e998f5ebee576aaa2112"},{url:"/windows11/Wide310x150Logo.scale-400.png",revision:"ff11398e4e52f5b6bfb92b1724dc973e"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute("/",new e.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({request:e,response:a,event:i,state:n})=>a&&"opaqueredirect"===a.type?new Response(a.body,{status:200,statusText:"OK",headers:a.headers}):a}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-webfonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3})]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,new e.StaleWhileRevalidate({cacheName:"google-fonts-stylesheets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/image\?url=.+$/i,new e.StaleWhileRevalidate({cacheName:"next-image",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp3|wav|ogg)$/i,new e.CacheFirst({cacheName:"static-audio-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp4)$/i,new e.CacheFirst({cacheName:"static-video-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/data\/.+\/.+\.json$/i,new e.StaleWhileRevalidate({cacheName:"next-data",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.NetworkFirst({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({url:e})=>{if(!(self.origin===e.origin))return!1;const a=e.pathname;return!a.startsWith("/api/auth/")&&!!a.startsWith("/api/")}),new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({url:e})=>{if(!(self.origin===e.origin))return!1;return!e.pathname.startsWith("/api/")}),new e.NetworkFirst({cacheName:"others",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({url:e})=>!(self.origin===e.origin)),new e.NetworkFirst({cacheName:"cross-origin",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:3600})]}),"GET")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  let registry = {};
+
+  // Used for `eval` and `importScripts` where we can't get script URL by other means.
+  // In both cases, it's safe to use a global var because those functions are synchronous.
+  let nextDefineUri;
+
+  const singleRequire = (uri, parentUri) => {
+    uri = new URL(uri + ".js", parentUri).href;
+    return registry[uri] || (
+      
+        new Promise(resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = uri;
+            script.onload = resolve;
+            document.head.appendChild(script);
+          } else {
+            nextDefineUri = uri;
+            importScripts(uri);
+            resolve();
+          }
+        })
+      
+      .then(() => {
+        let promise = registry[uri];
+        if (!promise) {
+          throw new Error(`Module ${uri} didn’t register its module`);
+        }
+        return promise;
+      })
+    );
+  };
+
+  self.define = (depsNames, factory) => {
+    const uri = nextDefineUri || ("document" in self ? document.currentScript.src : "") || location.href;
+    if (registry[uri]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    let exports = {};
+    const require = depUri => singleRequire(depUri, uri);
+    const specialDeps = {
+      module: { uri },
+      exports,
+      require
+    };
+    registry[uri] = Promise.all(depsNames.map(
+      depName => specialDeps[depName] || require(depName)
+    )).then(deps => {
+      factory(...deps);
+      return exports;
+    });
+  };
+}
+define(['./workbox-327c579b'], (function (workbox) { 'use strict';
+
+  importScripts();
+  self.skipWaiting();
+  workbox.clientsClaim();
+  workbox.registerRoute("/", new workbox.NetworkFirst({
+    "cacheName": "start-url",
+    plugins: [{
+      cacheWillUpdate: async ({
+        request,
+        response,
+        event,
+        state
+      }) => {
+        if (response && response.type === 'opaqueredirect') {
+          return new Response(response.body, {
+            status: 200,
+            statusText: 'OK',
+            headers: response.headers
+          });
+        }
+        return response;
+      }
+    }]
+  }), 'GET');
+  workbox.registerRoute(/.*/i, new workbox.NetworkOnly({
+    "cacheName": "dev",
+    plugins: []
+  }), 'GET');
+
+}));
+//# sourceMappingURL=sw.js.map
