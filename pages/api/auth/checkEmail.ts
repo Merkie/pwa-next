@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import pc from "../../../lib/resources/prisma";
-import bcrypt from "bcrypt";
 
 export default async function handler(
   req: NextApiRequest,

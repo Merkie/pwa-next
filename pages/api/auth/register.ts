@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import pc from "../../../lib/resources/prisma";
+import jwt from "../../../lib/resources/jwt";
 import bcrypt from "bcrypt";
 
 export default async function handler(
@@ -41,5 +42,8 @@ export default async function handler(
   });
 
   // send the user
-  res.status(200).send({ success: true, user });
+  res.status(200).send({
+    success: true,
+    token: await jwt({ id: user.id, email: user.email }),
+  });
 }

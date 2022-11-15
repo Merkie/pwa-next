@@ -23,7 +23,18 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
         }),
       }
     );
-    alert(JSON.stringify(await response.json()));
+
+    // get the response body
+    const data: { success: boolean; message?: string; token?: string } =
+      await response.json();
+
+    // if the response is successful, set cookie, else alert with error message
+    if (data.success) {
+      document.cookie = `auth=${data.token}; max-age=86400;path=/`;
+      window.location.href = "/app";
+    } else {
+      alert(data.message);
+    }
   };
 
   return (
