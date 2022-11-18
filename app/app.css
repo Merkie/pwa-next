@@ -1,119 +1,16 @@
-:root {
-  --primary-100: hsl(222, 60%, 44%);
-  --primary-200: hsl(222, 60%, 52%);
-  --primary-300: hsl(222, 60%, 61%);
-  --primary-400: hsl(222, 60%, 73%);
-  --primary-500: hsl(222, 60%, 83%);
-
-  --surface-100: hsl(210, 11%, 4%);
-  --surface-200: hsl(210, 11%, 13%);
-  --surface-300: hsl(210, 11%, 21%);
-  --surface-400: hsl(210, 11%, 33%);
-  --surface-500: hsl(210, 11%, 43%);
-
-  --surface-light-100: hsl(0, 0%, 61%);
-  --surface-light-200: hsl(0, 0%, 69%);
-  --surface-light-300: hsl(0, 0%, 78%);
-  --surface-light-400: hsl(0, 0%, 90%);
-  --surface-light-500: hsl(0, 0%, 100%);
-
-  --success-100: hsl(118, 52%, 39%);
-  --success-200: hsl(118, 52%, 47%);
-  --success-300: hsl(118, 52%, 56%);
-  --success-400: hsl(118, 52%, 68%);
-  --success-500: hsl(118, 52%, 78%);
-
-  --danger-100: hsl(356, 74%, 35%);
-  --danger-200: hsl(356, 74%, 43%);
-  --danger-300: hsl(356, 74%, 52%);
-  --danger-400: hsl(356, 74%, 62%);
-  --danger-500: hsl(356, 74%, 77%);
-
-  --warning-100: hsl(44, 98%, 45%);
-  --warning-200: hsl(44, 98%, 53%);
-  --warning-300: hsl(44, 98%, 62%);
-  --warning-400: hsl(44, 98%, 74%);
-  --warning-500: hsl(44, 98%, 82%);
-
-  --purple-100: hsl(300, 40%, 25%);
-  --purple-200: hsl(300, 40%, 30%);
-  --purple-300: hsl(300, 40%, 43%);
-  --purple-400: hsl(300, 40%, 58%);
-  --purple-500: hsl(300, 40%, 75%);
-
-  --orange-100: hsl(33, 87%, 28%);
-  --orange-200: hsl(33, 87%, 36%);
-  --orange-300: hsl(33, 87%, 44%);
-  --orange-400: hsl(33, 87%, 56%);
-  --orange-500: hsl(33, 87%, 64%);
-
-  --drop-shadow: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.2));
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
-  transition: all 0.2s ease;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: var(--surface-100);
-  color: var(--surface-light-500);
-}
-
-.container {
-  padding: 10px;
-  border-radius: 5px;
-  filter: var(--drop-shadow);
-}
-
-.surface {
-  background-color: var(--surface-200);
-  border: 1px solid var(--surface-300);
-}
-
-.primary {
-  background-color: var(--primary-300);
-  border: 1px solid var(--primary-400);
-}
-
-.success {
-  background-color: var(--success-300);
-  border: 1px solid var(--success-400);
-}
-
-.danger {
-  background-color: var(--danger-300);
-  border: 1px solid var(--danger-400);
-}
-
-.warning {
-  background-color: var(--warning-300);
-  border: 1px solid var(--warning-400);
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  color: var(--surface-light-500);
-  font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-button:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+  transition: all 0.1s ease;
 }
 
 button:active {
-  filter: brightness(0.95);
   transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.5;
 }

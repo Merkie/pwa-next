@@ -1,8 +1,0 @@
-.Application {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  height: 100vh;
-  width: 100%;
-  background: var(--base-100);
-}

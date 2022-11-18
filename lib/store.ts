@@ -2,7 +2,7 @@ import create from "zustand";
 import { persist } from "zustand/middleware";
 
 enum AppMode {
-  Normal = "normal",
+  Home = "home",
   Edit = "edit",
   Dashboard = "dashboard",
 }
@@ -15,7 +15,7 @@ interface ApplicationState {
 export const useStore = create(
   persist(
     (set, get) => ({
-      AppMode: AppMode.Normal,
+      AppMode: AppMode.Home,
       setAppMode: (mode: AppMode) => set({ AppMode: mode }),
     }),
     {
