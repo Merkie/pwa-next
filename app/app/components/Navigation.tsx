@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useStore } from "../../../lib/store";
 
-function Navigation() {
-  const [appMode, setAppMode] = useState("home");
-  const setAppModeStore = useStore((state: any) => state.setAppMode);
-  const appModeStore = useStore((state: any) => state.AppMode);
+interface NavigationProps {
+  appMode: string;
+  setAppMode: (appMode: string) => void;
+}
 
+function Navigation({ appMode, setAppMode }: NavigationProps) {
   const NavigationData: Array<{
     name: string;
     icon?: string;
@@ -25,10 +26,6 @@ function Navigation() {
     },
   ];
 
-  useEffect(() => {
-    setAppMode(appModeStore);
-  }, [appModeStore]);
-
   return (
     <main className="p-2 gap-2 bg-gray-800 flex border border-gray-600 border-x-0 border-b-0">
       {NavigationData.map((item) => (
@@ -38,7 +35,7 @@ function Navigation() {
               ? "bg-blue-600 border-blue-500"
               : "bg-gray-700 border-gray-600"
           }`}
-          onClick={() => setAppModeStore(item.name)}
+          onClick={() => setAppMode(item.name)}
           key={item.name}
           disabled={item.disabled ? item.disabled() : false}
         >
@@ -47,7 +44,7 @@ function Navigation() {
               item.icon || item.name
             }`}
           />{" "}
-          {item.name}
+          <span className="hidden sm:inline">{item.name}</span>
         </button>
       ))}
     </main>

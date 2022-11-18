@@ -12,11 +12,7 @@ interface ApplicationProps {
 }
 
 function Application({ user }: ApplicationProps) {
-  const [appMode, setAppMode] = useState("home");
-  const appModeStore = useStore((state: any) => state.AppMode);
-  useEffect(() => {
-    setAppMode(appModeStore);
-  }, [appModeStore]);
+  const [appMode, setAppMode] = useState("dashboard");
 
   return (
     <main className="h-screen bg-gray-900 text-gray-50 flex flex-col">
@@ -26,8 +22,8 @@ function Application({ user }: ApplicationProps) {
           <TileGrid />
         </>
       )}
-      {["dashboard"].includes(appMode) && <Dashboard />}
-      <Navigation />
+      {["dashboard"].includes(appMode) && <Dashboard user={user} />}
+      <Navigation appMode={appMode} setAppMode={setAppMode} />
     </main>
   );
 }

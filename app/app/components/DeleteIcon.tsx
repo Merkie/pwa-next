@@ -4,9 +4,10 @@ function DeleteButton() {
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
-      width="75"
-      height="75"
+      // width="75"
+      // height="75"
       viewBox="0 0 30 30"
+      className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]"
     >
       <path
         style={{ fill: "#111827" }}
