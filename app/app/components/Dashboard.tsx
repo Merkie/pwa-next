@@ -15,7 +15,7 @@ function Dashboard({ user }: DashboardProps) {
         setActiveDashboardPage={setActiveDashboardPage}
       />
       <div className="flex-1 flex flex-col">
-        <h1 className="text-2xl mb-4 block capitalize sm:hidden">
+        <h1 className="text-2xl p-4 block capitalize sm:hidden">
           {activeDashboardPage}
         </h1>
         {activeDashboardPage === "profile" && (

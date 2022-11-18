@@ -32,7 +32,9 @@ const checkToken = async () => {
 export default async function App() {
   const data = await checkToken();
   if (data.success) {
-    return <Application user={data.user as unknown as User} />;
+    return (
+      <Application user={JSON.parse(data.user?.data + "") as unknown as User} />
+    );
   }
   return <h1>Error, unauthorized.</h1>;
 }
