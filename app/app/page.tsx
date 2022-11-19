@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import jwtcreate from "../../lib/resources/jwt";
 import { User } from "@prisma/client";
+import pc from "../../lib/resources/prisma";
 
 const checkToken = async () => {
   const nextCookies = cookies();
@@ -31,10 +32,29 @@ const checkToken = async () => {
 
 export default async function App() {
   const data = await checkToken();
+
   if (data.success) {
-    return (
-      <Application user={JSON.parse(data.user?.data + "") as unknown as User} />
-    );
+    const userId = (JSON.parse(data.user?.data + "") as unknown as User).id;
+    const user = await pc.user.findUnique({
+      where: {
+        id: userId,
+      },
+      include: {
+        projects: {
+          include: {
+            pages: {
+              include: {
+                tiles: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    if (!user) return <div>There was an error.</div>;
+    //@ts-ignore
+    delete user?.hashedPassword;
+    return <Application user={user} />;
   }
   return <h1>Error, unauthorized.</h1>;
 }

@@ -5,10 +5,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// postgres setup
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// sqlite setup
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:./local.db"
+// }
 
 model User {
   id             String       @id @default(cuid())
@@ -16,8 +23,8 @@ model User {
   hashedPassword String?
   name           String?
   profileImage   String?
-  Project        Project[]
-  S3Resource     S3Resource[]
+  projects       Project[]
+  s3resources    S3Resource[]
 }
 
 model Project {
@@ -31,13 +38,13 @@ model Project {
   userId      String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  Page        Page[]
+  pages       Page[]
 }
 
 model Page {
   id        String   @id @default(cuid())
   name      String
-  Tiles     Tile[]
+  tiles     Tile[]
   Project   Project  @relation(fields: [projectId], references: [id])
   projectId String
   createdAt DateTime @default(now())

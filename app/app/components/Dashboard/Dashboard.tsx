@@ -1,13 +1,15 @@
-import { User } from "@prisma/client";
-import { useState } from "react";
+"use client";
+import { useState, useContext } from "react";
+import { userContext } from "../../ApplicationContext";
+// Components
 import DashboardNavigation from "./DashboardNavigation";
 import DashboardProfilePage from "./DashboardProfilePage";
-interface DashboardProps {
-  user: User;
-}
+import DashboardProjects from "./DashboardProjects";
 
-function Dashboard({ user }: DashboardProps) {
+function Dashboard() {
   const [activeDashboardPage, setActiveDashboardPage] = useState("profile");
+  const user = useContext(userContext);
+
   return (
     <main className="flex-1 flex">
       <DashboardNavigation
@@ -19,7 +21,14 @@ function Dashboard({ user }: DashboardProps) {
           {activeDashboardPage}
         </h1>
         {activeDashboardPage === "profile" && (
-          <DashboardProfilePage user={user} />
+          <>
+            <DashboardProfilePage />
+            {/* <DashboardProjects
+              projects={[
+                { name: "Hello, world!", description: "Hello, world!" },
+              ]}
+            /> */}
+          </>
         )}
       </div>
     </main>
