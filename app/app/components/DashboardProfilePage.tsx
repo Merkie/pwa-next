@@ -37,14 +37,14 @@ function DashboardProfilePage({ user }: DashboardProfilePageProps) {
         >
           <h1 className="text-xl mb-2">Edit Profile</h1>
           <div className="flex flex-col gap-2 items-center justify-center">
-            <div className="rounded-full grid items-center overflow-hidden object-cover h-[100px] w-[100px]">
-              <Image
-                src={profilePreviewURL}
-                alt="profile"
-                width={100}
-                height={100}
-              />
-            </div>
+            <div
+              style={{
+                backgroundImage: `url(${profilePreviewURL})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className="rounded-full h-[100px] w-[100px]"
+            />
             <input
               onInput={upload}
               ref={fileInputRef}
