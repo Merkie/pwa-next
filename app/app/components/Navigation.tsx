@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useStore } from "../../../lib/store";
+import { userContext } from "../ApplicationContext";
 
 interface NavigationProps {
   appMode: string;
@@ -8,6 +9,7 @@ interface NavigationProps {
 }
 
 function Navigation({ appMode, setAppMode }: NavigationProps) {
+  const user = useContext(userContext);
   const NavigationData: Array<{
     name: string;
     icon?: string;
@@ -15,6 +17,8 @@ function Navigation({ appMode, setAppMode }: NavigationProps) {
   }> = [
     {
       name: "home",
+      icon: "home",
+      disabled: () => user.projects.length === 0,
     },
     {
       name: "edit",
@@ -23,7 +27,7 @@ function Navigation({ appMode, setAppMode }: NavigationProps) {
     },
     {
       name: "dashboard",
-      icon: "category",
+      icon: "cog",
     },
   ];
 
