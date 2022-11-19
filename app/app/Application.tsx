@@ -4,11 +4,10 @@ import Navigation from "./components/Navigation";
 import SentenceBuilder from "./components/Application/SentenceBuilder";
 import TileGrid from "./components/Application/TileGrid";
 import Dashboard from "./components/Dashboard/Dashboard";
-import { userContext } from "./ApplicationContext";
+import { type UserFull, userContext } from "./ApplicationContext";
 
-function Application() {
+function Application({ user }: { user: UserFull }) {
   const [appMode, setAppMode] = useState("dashboard");
-  const user = useContext(userContext);
 
   return (
     <userContext.Provider value={user}>

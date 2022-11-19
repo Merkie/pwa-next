@@ -1,3 +1,5 @@
+"use client";
+
 interface DashboardNavigationProps {
   activeDashboardPage: string;
   setActiveDashboardPage: (activeDashboardPage: string) => void;

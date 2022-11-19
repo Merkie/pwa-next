@@ -1,3 +1,4 @@
+"use client";
 import DeleteIcon from "./DeleteIcon";
 
 function SentenceBuilder() {

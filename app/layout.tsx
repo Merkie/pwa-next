@@ -1,6 +1,6 @@
 import "./app.css";
 
-async function Layout({ children }: { children: any[] }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
@@ -17,5 +17,3 @@ async function Layout({ children }: { children: any[] }) {
     </html>
   );
 }
-
-export default Layout;

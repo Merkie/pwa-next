@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 
 import { User } from "@prisma/client";
 import { useContext, useState } from "react";
-import DashboardEditProfileModal from "./DashboardEditProfileModal";
+import EditProfileModal from "./EditProfileModal";
 import { userContext } from "../../ApplicationContext";
 
 function DashboardProfilePage() {
@@ -11,7 +12,7 @@ function DashboardProfilePage() {
 
   return (
     <>
-      <DashboardEditProfileModal
+      <EditProfileModal
         showEditProfileModal={showEditProfileModal}
         setShowEditProfileModal={setShowEditProfileModal}
       />

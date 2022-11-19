@@ -1,5 +1,4 @@
 "use client";
-import "./portal.module.css";
 import { useRef } from "react";
 import Image from "next/image";
 

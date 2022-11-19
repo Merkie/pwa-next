@@ -2,17 +2,19 @@
 import { useState, useContext } from "react";
 import { userContext } from "../../ApplicationContext";
 // Components
-import DashboardNavigation from "./DashboardNavigation";
-import DashboardProfilePage from "./DashboardProfilePage";
-import DashboardProjects from "./DashboardProjects";
+import Sidebar from "./Sidebar";
+import ProfileBlock from "./ProfileBlock";
+import ProjectsBlock from "./ProjectsBlock";
 
 function Dashboard() {
   const [activeDashboardPage, setActiveDashboardPage] = useState("profile");
   const user = useContext(userContext);
 
+  console.log(user);
+
   return (
     <main className="flex-1 flex">
-      <DashboardNavigation
+      <Sidebar
         activeDashboardPage={activeDashboardPage}
         setActiveDashboardPage={setActiveDashboardPage}
       />
@@ -22,12 +24,8 @@ function Dashboard() {
         </h1>
         {activeDashboardPage === "profile" && (
           <>
-            <DashboardProfilePage />
-            {/* <DashboardProjects
-              projects={[
-                { name: "Hello, world!", description: "Hello, world!" },
-              ]}
-            /> */}
+            <ProfileBlock />
+            <ProjectsBlock projects={user.projects || []} />
           </>
         )}
       </div>

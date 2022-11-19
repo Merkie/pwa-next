@@ -1,3 +1,4 @@
+"use client";
 import Portal from "../portal";
 
 export default function Page() {
