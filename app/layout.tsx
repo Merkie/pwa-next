@@ -9,7 +9,9 @@ async function Layout({ children }: { children: any[] }) {
           rel="stylesheet"
         />
         <link rel="manifest" href="manifest.webmanifest" />
-        <title>My App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/ios/64.png" type="image/png" />
+        <title>FreeSpeech AAC</title>
       </head>
       <body>{children}</body>
     </html>

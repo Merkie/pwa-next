@@ -1,6 +1,7 @@
 "use client";
 import "./portal.module.css";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Portal({ isLogin }: { isLogin: boolean }) {
   const email = useRef<HTMLInputElement>(null);
@@ -39,6 +40,23 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
 
   return (
     <main className="h-screen shadow-xl grid place-items-center bg-gradient-to-b from-gray-800 to-gray-900 text-gray-50">
+      <a
+        className="absolute top-[10%] left-1/2 -translate-x-1/2 sm:-translate-x-0 sm:top-[40px] sm:left-[40px]"
+        href="/"
+      >
+        <div className="flex items-center gap-4 opacity-75 hover:opacity-100">
+          <Image
+            src="/images/logo-white.png"
+            width={30}
+            height={30}
+            alt="free speech aac logo"
+          />
+          <h1 className="font-bold text-2xl">
+            FreeSpeech <span className="font-light">AAC</span>
+          </h1>
+        </div>
+      </a>
+
       <div className="flex w-full sm:w-[700px] sm:h-[600px] bg-transparent sm:bg-slate-100">
         <section
           style={{
@@ -65,7 +83,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
           </div>
         </section>
         <section className="flex-1 flex gap-2 flex-col justify-center p-4 md:text-slate-900 bg-slate-900 md:bg-slate-100 border border-slate-700 border-x-0">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold text-center sm:text-left">
             {isLogin ? "Log in" : "Join FreeSpeech"}
           </h1>
           <p className="font-medium">Add your email</p>
@@ -121,16 +139,24 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
           >
             {isLogin ? "Login" : "Sign in"}
           </button>
-          <span className="pt-5">
+          <span className="pt-5 text-center sm:text-left">
             {isLogin ? "Don't have an account?" : "Already a member?"}
             <a
-              className="underline ml-2 text-blue-500"
+              className="underline ml-2 text-blue-500 hover:text-blue-400"
               href={isLogin ? "/portal/signup" : "/portal/login"}
             >
               {isLogin ? "Sign up instead" : "Log in instead"}
             </a>
           </span>
         </section>
+      </div>
+      <div className="absolute left-1/2 -translate-x-1/2 sm:-translate-x-0 bottom-[50px] sm:bottom-[20px] flex gap-2 items-center">
+        <a href="https://github.com/merkie/freespeech" target="blank">
+          <i className="bx bxl-github text-4xl text-gray-500 hover:text-gray-50"></i>
+        </a>
+        <a href="/docs">
+          <i className="bx bxs-book text-4xl text-gray-500 hover:text-gray-50"></i>
+        </a>
       </div>
     </main>
   );
