@@ -12,7 +12,7 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(1px);
+  transform: trangrayY(1px);
 }
 
 button:disabled {

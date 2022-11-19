@@ -41,7 +41,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
   return (
     <main className="h-screen shadow-xl grid place-items-center bg-gradient-to-b from-gray-800 to-gray-900 text-gray-50">
       <a
-        className="absolute top-[10%] left-1/2 -translate-x-1/2 sm:-translate-x-0 sm:top-[40px] sm:left-[40px]"
+        className="absolute top-[10%] left-1/2 -trangray-x-1/2 sm:-trangray-x-0 sm:top-[40px] sm:left-[40px]"
         href="/"
       >
         <div className="flex items-center gap-4 opacity-75 hover:opacity-100">
@@ -57,7 +57,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
         </div>
       </a>
 
-      <div className="flex w-full sm:w-[700px] sm:h-[600px] bg-transparent sm:bg-slate-100">
+      <div className="flex w-full sm:w-[700px] sm:h-[600px] bg-transparent sm:bg-gray-100">
         <section
           style={{
             backgroundImage:
@@ -82,13 +82,13 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
             </h1>
           </div>
         </section>
-        <section className="flex-1 flex gap-2 flex-col justify-center p-4 md:text-slate-900 bg-slate-900 md:bg-slate-100 border border-slate-700 border-x-0">
+        <section className="flex-1 flex gap-2 flex-col justify-center p-4 md:text-gray-900 bg-gray-900 md:bg-gray-100 border border-gray-700 border-x-0">
           <h1 className="text-2xl font-bold text-center sm:text-left">
             {isLogin ? "Log in" : "Join FreeSpeech"}
           </h1>
           <p className="font-medium">Add your email</p>
           <input
-            className="bg-slate-200 mb-2 border border-slate-300 text-slate-500 p-2 rounded-sm"
+            className="bg-gray-200 mb-2 border border-gray-300 text-gray-500 p-2 rounded-sm"
             ref={email}
             type="text"
           />
@@ -96,7 +96,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
             <>
               <p className="font-medium">Choose a password</p>
               <input
-                className="bg-slate-200 border border-slate-300 text-slate-500 p-2 rounded-sm"
+                className="bg-gray-200 border border-gray-300 text-gray-500 p-2 rounded-sm"
                 ref={password}
                 type="password"
                 placeholder="password"
@@ -109,14 +109,14 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
             <>
               <p className="font-medium">Add your name</p>
               <input
-                className="bg-slate-200 mb-2 border border-slate-300 text-slate-500 p-2 rounded-sm"
+                className="bg-gray-200 mb-2 border border-gray-300 text-gray-500 p-2 rounded-sm"
                 ref={name}
                 type="text"
                 placeholder="name"
               />
               <p className="font-medium">Choose a password</p>
               <input
-                className="bg-slate-200 border border-slate-300 text-slate-500 p-2 rounded-sm"
+                className="bg-gray-200 border border-gray-300 text-gray-500 p-2 rounded-sm"
                 ref={password}
                 type="password"
                 placeholder="password"
@@ -126,7 +126,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
               </p>
               <p className="font-medium">Confirm your password</p>
               <input
-                className="bg-slate-200 mb-2 border border-slate-300 text-slate-500 p-2 rounded-sm"
+                className="bg-gray-200 mb-2 border border-gray-300 text-gray-500 p-2 rounded-sm"
                 ref={confirmPassword}
                 type="password"
                 placeholder="confirm password"
@@ -150,7 +150,7 @@ export default function Portal({ isLogin }: { isLogin: boolean }) {
           </span>
         </section>
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 sm:-translate-x-0 bottom-[50px] sm:bottom-[20px] flex gap-2 items-center">
+      <div className="absolute left-1/2 -trangray-x-1/2 sm:-trangray-x-0 bottom-[50px] sm:bottom-[20px] flex gap-2 items-center">
         <a href="https://github.com/merkie/freespeech" target="blank">
           <i className="bx bxl-github text-4xl text-gray-500 hover:text-gray-50"></i>
         </a>
