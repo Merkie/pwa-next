@@ -1,6 +1,5 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
-import { useStore } from "../../../lib/store";
 import { userContext } from "../ApplicationContext";
 
 interface NavigationProps {

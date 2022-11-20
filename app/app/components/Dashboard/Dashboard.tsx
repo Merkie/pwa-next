@@ -10,8 +10,6 @@ function Dashboard() {
   const [activeDashboardPage, setActiveDashboardPage] = useState("profile");
   const user = useContext(userContext);
 
-  console.log(user);
-
   return (
     <main className="flex-1 flex">
       <Sidebar

@@ -14,6 +14,19 @@ function DashboardEditProfileModal({
   const [modalChanges, setModalChanges] = useState(false);
   const nameInputRef = useRef<HTMLInputElement>(null);
 
+  const submitProjectCreation = async () => {
+    const response = await fetch("/api/project/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        name: nameInputRef.current?.value,
+      }),
+    });
+  };
+
   return (
     <>
       {createProjectModalOpen && (
@@ -38,6 +51,7 @@ function DashboardEditProfileModal({
             </button>
             <button
               disabled={!modalChanges}
+              onClick={submitProjectCreation}
               className="bg-blue-600 border border-blue-500 p-2 rounded-md flex items-center gap-2 flex-1 justify-center"
             >
               Save
