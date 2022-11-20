@@ -30,6 +30,17 @@ const checkToken = async () => {
   return { success: false, message: "No token" };
 };
 
+// function that recursively checks for a Date object and converts it to a string
+const convertDate = (obj: any) => {
+  for (const key in obj) {
+    if (obj[key] instanceof Date) {
+      obj[key] = obj[key].toISOString();
+    } else if (typeof obj[key] === "object") {
+      convertDate(obj[key]);
+    }
+  }
+};
+
 export default async function App() {
   const data = await checkToken();
 
@@ -54,6 +65,8 @@ export default async function App() {
     if (!user) return <div>There was an error.</div>;
     //@ts-ignore
     delete user?.hashedPassword;
+    // convert Date objects to strings
+    convertDate(user);
     return <Application user={user} />;
   }
   return <h1>Error, unauthorized.</h1>;

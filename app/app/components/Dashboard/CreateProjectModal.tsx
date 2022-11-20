@@ -13,18 +13,27 @@ function DashboardEditProfileModal({
 }: DashboardEditProfileModalProps) {
   const [modalChanges, setModalChanges] = useState(false);
   const nameInputRef = useRef<HTMLInputElement>(null);
+  const descriptionInputRef = useRef<HTMLInputElement>(null);
 
   const submitProjectCreation = async () => {
     const response = await fetch("/api/project/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify({
         name: nameInputRef.current?.value,
+        description: descriptionInputRef.current?.value,
       }),
     });
+
+    const data = await response.json();
+    if (!data.success) {
+      alert(data.message);
+      return;
+    }
+
+    console.log(data);
   };
 
   return (
@@ -38,6 +47,13 @@ function DashboardEditProfileModal({
           <p className="font-medium">Project name</p>
           <input
             ref={nameInputRef}
+            onInput={() => setModalChanges(true)}
+            type="text"
+            className="bg-gray-100 w-full mb-2 border border-gray-200 text-gray-500 p-2 rounded-sm"
+          />
+          <p className="font-medium">Project description</p>
+          <input
+            ref={descriptionInputRef}
             onInput={() => setModalChanges(true)}
             type="text"
             className="bg-gray-100 w-full mb-2 border border-gray-200 text-gray-500 p-2 rounded-sm"
